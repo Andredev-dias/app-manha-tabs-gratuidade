@@ -27,30 +27,42 @@ export default function Register() {
                 <Text style={styles.title}>RESGISTRAR NOVO USUÁRIO</Text>
 
                 <View style={styles.wrapInput}>
-                    <Text style={styles.label}>Nome</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                        <Image style={styles.icon} source={require('@/assets/images/profile.png')} />
+                        <Text style={styles.label}>Nome</Text>
+                    </View>
                     <TextInput style={error ? styles.inputError : styles.input} onChangeText={setName} value={name} placeholder="Digite seu nome" keyboardType="default" />
                 </View>
 
                 <View style={styles.wrapInput}>
-                    <Text style={styles.label}>E-mail</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                        <Image style={styles.icon} source={require('@/assets/images/email.png')} />
+                        <Text style={styles.label}>E-mail</Text>
+                    </View>
                     <TextInput style={error ? styles.inputError : styles.input} onChangeText={setEmail} value={email} placeholder="Digite seu e-mail" keyboardType="email-address" />
                 </View>
 
                 <View style={styles.wrapInput}>
-                    <Text style={styles.label}>Senha</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                        <Image style={styles.icon} source={require('@/assets/images/key2.png')} />
+                        <Text style={styles.label}>Senha</Text>
+                    </View>
                     <View style={styles.wrapEye}>
                         <TextInput style={error ? styles.inputError : styles.input} onChangeText={setConfirmPassword} value={confirmPassword} placeholder="Confirme sua senha" keyboardType="default" secureTextEntry={key ? true : false} />
-                        {key && <TouchableOpacity style={styles.eye} onPress={() => setKey(false)}><Image style={styles.iconEye} source={require('@/assets/images/hide.png')} /></TouchableOpacity>}
-                        {!key && <TouchableOpacity style={styles.eye} onPress={() => setKey(true)}><Image style={styles.iconEye} source={require('@/assets/images/show.png')} /></TouchableOpacity>}
+                        {key && <TouchableOpacity style={styles.eye} onPress={() => setKey(false)}><Image style={styles.iconEye} source={require('@/assets/images/eyeRisk.png')} /></TouchableOpacity>}
+                        {!key && <TouchableOpacity style={styles.eye} onPress={() => setKey(true)}><Image style={styles.iconEye} source={require('@/assets/images/eyeOOO.png')} /></TouchableOpacity>}
                     </View>
                 </View>
 
                 <View style={styles.wrapInput}>
-                    <Text style={styles.label}>Senha</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                        <Image style={styles.icon} source={require('@/assets/images/key2.png')} />
+                        <Text style={styles.label}>Confirmar senha</Text>
+                    </View>
                     <View style={styles.wrapEye}>
                         <TextInput style={error ? styles.inputError : styles.input} onChangeText={setPassword} value={password} placeholder="Digite sua senha" keyboardType="default" secureTextEntry={keyconfirm ? true : false} />
-                        {keyconfirm && <TouchableOpacity style={styles.eye} onPress={() => setKeyconfirm(false)}><Image style={styles.iconEye} source={require('@/assets/images/hide.png')} /></TouchableOpacity>}
-                        {!keyconfirm && <TouchableOpacity style={styles.eye} onPress={() => setKeyconfirm(true)}><Image style={styles.iconEye} source={require('@/assets/images/show.png')} /></TouchableOpacity>}
+                        {keyconfirm && <TouchableOpacity style={styles.eye} onPress={() => setKeyconfirm(false)}><Image style={styles.iconEye} source={require('@/assets/images/eyeRisk.png')} /></TouchableOpacity>}
+                        {!keyconfirm && <TouchableOpacity style={styles.eye} onPress={() => setKeyconfirm(true)}><Image style={styles.iconEye} source={require('@/assets/images/eyeOOO.png')} /></TouchableOpacity>}
                     </View>
                 </View>
 
@@ -92,8 +104,8 @@ const styles = StyleSheet.create({
         textShadowRadius: 10
     },
     iconEye: {
-        width: 25,
-        height: 25
+        width: 15,
+        height: 15
     },
     wrapInput: {
         width: '80%',
@@ -105,7 +117,7 @@ const styles = StyleSheet.create({
     label: {
         color: "#ffffff",
         fontSize: 20,
-        paddingLeft: 25,
+        paddingLeft: 5,
         fontWeight: 700,
     },
     input: {
@@ -159,11 +171,11 @@ const styles = StyleSheet.create({
     },
     eye: {
         position: 'absolute',
-        right: 20,
+        right: 30,
     },
     wrapBottom: {
         width: '100%',
-        marginTop: 30,
+        marginTop: 20,
     },
     btn: {
         backgroundColor: '#e98d04',
@@ -172,7 +184,7 @@ const styles = StyleSheet.create({
         borderRadius: 999,
         width: '80%',
         alignSelf: 'center',
-        shadowColor:  '#e98d04',
+        shadowColor: '#e98d04',
         shadowOffset: {
             width: 0,
             height: 7,
@@ -184,7 +196,7 @@ const styles = StyleSheet.create({
     btnText: {
         color: '#ffffff',
         textAlign: 'center',
-        textShadowColor:'#4b0606',
+        textShadowColor: '#4b0606',
         textShadowOffset: { width: 2, height: 1 },
         textShadowRadius: 10,
         fontSize: 22
@@ -195,5 +207,12 @@ const styles = StyleSheet.create({
         fontWeight: 500,
         textAlign: 'center',
         marginTop: -20
+    },
+    icon: {
+        width: 15,
+        height: 15,
+        marginLeft: 20,
+        marginTop: 8
     }
+ 
 });

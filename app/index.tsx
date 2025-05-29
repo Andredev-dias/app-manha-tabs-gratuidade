@@ -25,16 +25,22 @@ export default function Login() {
             <Text style={styles.title}>LOGIN</Text>
 
             <View style={styles.wrapInput}>
+                   <View style={{ flexDirection: 'row' }}>
+                                        <Image style={styles.icon} source={require('@/assets/images/email.png')} />
                 <Text style={styles.label}>E-mail</Text>
+                                        </View>
                 <TextInput style={error ? styles.inputError : styles.input} onChangeText={setEmail} value={email} placeholder="Digite seu e-mail" keyboardType="email-address" />
             </View>
 
             <View style={styles.wrapInput}>
+            <View style={{ flexDirection: 'row' }}>
+            <Image style={styles.icon} source={require('@/assets/images/key2.png')} />
                 <Text style={styles.label}>Senha</Text>
+                </View>
                 <View style={styles.wrapEye}>
                     <TextInput style={error ? styles.inputError : styles.input} onChangeText={setPassword} value={password} placeholder="Digite sua senha" keyboardType="default" secureTextEntry={key ? true : false} />
-                    {key && <TouchableOpacity style={styles.eye} onPress={() => setKey(false)}><Image style={styles.iconEye} source={require('@/assets/images/hide.png')} /></TouchableOpacity>}
-                    {!key && <TouchableOpacity style={styles.eye} onPress={() => setKey(true)}><Image style={styles.iconEye} source={require('@/assets/images/show.png')} /></TouchableOpacity>}
+                    {key && <TouchableOpacity style={styles.eye} onPress={() => setKey(false)}><Image style={styles.iconEye} source={require('@/assets/images/eyeRisk.png')} /></TouchableOpacity>}
+                    {!key && <TouchableOpacity style={styles.eye} onPress={() => setKey(true)}><Image style={styles.iconEye} source={require('@/assets/images/eyeOOO.png')} /></TouchableOpacity>}
                 </View>
             </View>
 
@@ -80,8 +86,8 @@ const styles = StyleSheet.create({
         textShadowRadius: 10
     },
     iconEye: {
-        width: 25,
-        height: 25
+        width: 15,
+        height: 15
     },
     wrapInput: {
         width: '80%',
@@ -93,7 +99,7 @@ const styles = StyleSheet.create({
     label: {
         color: '#ffffff',
         fontSize: 20,
-        paddingLeft: 25,
+        paddingLeft: 5,
         fontWeight: 700,
     },
     input: {
@@ -181,5 +187,11 @@ const styles = StyleSheet.create({
         fontWeight: 500,
         textAlign: 'center',
         marginTop: -5
+    },
+    icon: {
+        width: 15,
+        height: 15,
+        marginLeft: 20,
+        marginTop: 8
     }
 });
